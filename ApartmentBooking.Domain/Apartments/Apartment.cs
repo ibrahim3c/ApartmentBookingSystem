@@ -1,11 +1,11 @@
 ﻿using ApartmentBooking.Domain.Abstraction;
-using ApartmentBooking.Domain.Apartments;
+using ApartmentBooking.Domain.Shared;
 
-namespace ApartmentBooking.Domain.Apartment
+namespace ApartmentBooking.Domain.Apartments
 {
     // make the class sealed
-        // if I don't intend to inherit them at any point.
-        // It might give you a small performance improvement
+    // if I don't intend to inherit them at any point.
+    // It might give you a small performance improvement
     // this is anemic Entity
     public sealed class Apartment:Entity
     {
@@ -40,7 +40,7 @@ namespace ApartmentBooking.Domain.Apartment
         public Address Address { get; private set; }
         public Money Price { get; private set; }
         public Money CleaningFee { get; private set; }
-        public DateTime? LastBookedOnUTC { get; private set; }
+        public DateTime? LastBookedOnUTC { get; internal set; }
 
 
         // represent the benefits this apartment offers

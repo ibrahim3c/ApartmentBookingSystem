@@ -1,4 +1,4 @@
-﻿namespace ApartmentBooking.Domain.Apartments
+﻿namespace ApartmentBooking.Domain.Shared
 {
     public record Currency
     {
@@ -9,7 +9,7 @@
         // i make it private for i only can create instance in the Record(class) 
         private Currency(string code) => code = code;
         public string Code { get; init; }
-        public static IReadOnlyCollection<Currency> All =new[] { Usd, Eur };
+        public static IReadOnlyCollection<Currency> All = new[] { Usd, Eur };
 
         public static Currency FromCode(string code)
         {
