@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ApartmentBooking.Domain.Abstraction;
+using MediatR;
 
 namespace ApartmentBooking.Application.Abstractions.Messaging
 {
-    internal interface IQuery
+    /*
+     * It is used with MediatR for handling queries.
+     * The response is wrapped in a Result<TResponse> 
+                            to handle success or failure.
+     */
+    public interface IQuery<TResponse>:IRequest<Result<TResponse>>
     {
     }
 }
