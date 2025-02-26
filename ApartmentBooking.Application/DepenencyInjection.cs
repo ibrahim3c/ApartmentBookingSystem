@@ -1,4 +1,5 @@
-﻿using ApartmentBooking.Domain.Bookings;
+﻿using ApartmentBooking.Application.Behaviors;
+using ApartmentBooking.Domain.Bookings;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ApartmentBooking.Application
@@ -13,6 +14,8 @@ namespace ApartmentBooking.Application
             {
                 // It registers all MediatR handlers from the same assembly where DepenencyInjection is located.
                 conf.RegisterServicesFromAssemblies(typeof(DepenencyInjection).Assembly);
+                //It tells MediatR to apply LoggingBehavior<TRequest, TResponse> for all request-response types automatically.
+                conf.AddOpenBehavior(typeof(LoggingBehavior<,>));
             });
 
             //A service related to booking pricing logic (probably used in business rules).
