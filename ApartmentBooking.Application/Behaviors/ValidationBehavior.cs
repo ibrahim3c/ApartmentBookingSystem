@@ -1,7 +1,7 @@
 ﻿using ApartmentBooking.Application.Abstractions.Messaging;
+using ApartmentBooking.Application.Exceptions;
 using FluentValidation;
 using MediatR;
-using System.ComponentModel.DataAnnotations;
 
 namespace ApartmentBooking.Application.Behaviors
 {
@@ -45,8 +45,9 @@ namespace ApartmentBooking.Application.Behaviors
 
             if (validationErrors.Any())
                 //custom exception
-                throw new Exception.ValidationException(validationErrors);
-            return next();
+                throw new Exceptions.ValidationException(validationErrors);
+
+            return await next();
 
         }
     }

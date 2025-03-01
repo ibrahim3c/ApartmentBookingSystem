@@ -1,4 +1,4 @@
-﻿namespace ApartmentBooking.Application.Behaviors
+﻿namespace ApartmentBooking.Application.Exceptions
 {
-    public record ValidationError(string propertyName,string errorMessage);
+    public record ValidationError(string propertyName, string errorMessage);
 }

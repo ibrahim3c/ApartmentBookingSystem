@@ -1,5 +1,6 @@
 ﻿using ApartmentBooking.Application.Behaviors;
 using ApartmentBooking.Domain.Bookings;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ApartmentBooking.Application
@@ -16,10 +17,14 @@ namespace ApartmentBooking.Application
                 conf.RegisterServicesFromAssemblies(typeof(DepenencyInjection).Assembly);
                 //It tells MediatR to apply LoggingBehavior<TRequest, TResponse> for all request-response types automatically.
                 conf.AddOpenBehavior(typeof(LoggingBehavior<,>));
+                conf.AddOpenBehavior(typeof(ValidationBehavior<,>));
             });
 
             //A service related to booking pricing logic (probably used in business rules).
             services.AddTransient<PricingService>();
+
+            // register all validators from the same assymbly 
+            services.AddValidatorsFromAssembly(typeof(DepenencyInjection).Assembly);
             return services;
         }
 

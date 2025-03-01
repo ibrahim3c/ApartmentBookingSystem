@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 
 namespace ApartmentBooking.Application.Bookings.ReserveBooking
 {
-    internal class ReserveBookingCommandValidator
+    public class ReserveBookingCommandValidator:AbstractValidator<ReserveBookingCommand>
     {
+        public ReserveBookingCommandValidator() {
+        
+            RuleFor(r=>r.ApartmentId).NotEmpty();
+            RuleFor(r=>r.UserId).NotEmpty();
+
+            RuleFor(r=>r.StartDate).LessThan(r=>r.EndDate);
+        }
     }
 }

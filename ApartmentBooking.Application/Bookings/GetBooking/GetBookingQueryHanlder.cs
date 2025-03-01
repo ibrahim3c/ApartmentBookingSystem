@@ -6,7 +6,7 @@ using Dapper;
 
 namespace ApartmentBooking.Application.Bookings.GetBooking
 {
-    // i think sealed cuz we will not use it in controller 
+    // i think internal cuz we will not use it in controller 
     // will we use mediatR and he will route request to its hander
     internal sealed class GetBookingQueryHanlder : IQueryHanlder<GetBookingQuery, BookingResponse>
     {

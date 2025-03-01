@@ -26,7 +26,7 @@ namespace ApartmentBooking.Application.Bookings.ReserveBooking
             if (user == null)
                 return;
 
-            // TODO: send the notification using EmailService => it Abstractions/Email
+            // TODO: send the notification using EmailService => in Abstractions/Email
             return;
 
         }

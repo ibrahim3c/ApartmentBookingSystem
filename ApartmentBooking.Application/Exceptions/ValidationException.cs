@@ -1,10 +1,10 @@
-﻿namespace ApartmentBooking.Application.Behaviors
+﻿namespace ApartmentBooking.Application.Exceptions
 {
-    public sealed class ValidationException:Exception
+    public sealed class ValidationException : Exception
     {
         public ValidationException(IEnumerable<ValidationError> errors)
         {
-            Errors=errors;
+            Errors = errors;
         }
 
         public IEnumerable<ValidationError> Errors { get; }
