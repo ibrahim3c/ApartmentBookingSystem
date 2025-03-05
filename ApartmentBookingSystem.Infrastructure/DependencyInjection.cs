@@ -1,4 +1,5 @@
 ﻿using ApartmentBooking.Application.Abstractions.Data;
+using ApartmentBooking.Domain.Abstraction;
 using ApartmentBooking.Domain.Apartments;
 using ApartmentBooking.Domain.Bookings;
 using ApartmentBooking.Domain.Users;
@@ -27,9 +28,10 @@ public static class DependencyInjection
         });
 
         // respos
-        services.AddScoped<IUserRepository, IUserRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IBookingRepository, BookingRepository>();
         services.AddScoped<IApartmentRepository, ApartmentRepository>();
+        services.AddScoped<IUnitOfWork,UnitOfWork>();
 
         //dapper                                      // use same connectionString
         services.AddSingleton< ISqlConnectionFactory >(provider=> new SqlConnectionFactory(connectionString));

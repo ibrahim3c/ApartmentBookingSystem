@@ -8,7 +8,7 @@ namespace ApartmentBooking.Application.Bookings.ReserveBooking
 {
     // make it sealed to Improves Performance
          //The JIT (Just-In-Time) compiler can optimize method calls better when it knows a class won't be inherited.
-    internal sealed class ReserveBookingCommandHandler : ICommandHanlder<ReserveBookingCommand, Guid>
+    public sealed class ReserveBookingCommandHandler : ICommandHanlder<ReserveBookingCommand, Guid>
     {
         private readonly IUserRepository _userRepository;
         private readonly IApartmentRepository _apartmentRepository;

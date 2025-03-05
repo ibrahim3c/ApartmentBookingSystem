@@ -1,6 +1,6 @@
 ﻿namespace ApartmentBooking.Application.Apartments.GetApartments
 {
-    internal class ApartmentResponse
+    public class ApartmentResponse
     {
         public  Guid id { get; init; }
         public string Name {  get; init; }
