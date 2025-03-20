@@ -24,6 +24,10 @@ namespace ApartmentBooking.Domain.Users
             LastName = lastName;
             Email = email;
         }
+        private User()
+        {
+            
+        }
 
         public FirstName FirstName { get; set; }
         public LastName LastName { get; set; }

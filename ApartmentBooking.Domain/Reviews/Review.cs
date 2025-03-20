@@ -1,7 +1,5 @@
 ﻿using ApartmentBooking.Domain.Abstraction;
 using ApartmentBooking.Domain.Reviews.DomainEvents;
-using System.Reflection.Emit;
-using System.Xml.Linq;
 
 namespace ApartmentBooking.Domain.Reviews;
 
@@ -14,6 +12,10 @@ public sealed class Review : Entity
         Rating = rating;
         Comment = comment;
         CreatedAt = createdAt;
+    }
+    private Review()
+    {
+        
     }
     public Guid UserId { get; private set; }
     public Guid ApartmentId { get; private set; }

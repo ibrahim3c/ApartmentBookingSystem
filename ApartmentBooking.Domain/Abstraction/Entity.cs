@@ -11,6 +11,9 @@
             Id = id;
             //_domainEvents=new List<IDomainEvent>(); // allowed cuz it is initialization
         }
+
+        protected Entity()
+        {        }
         public Guid Id { get; init; }
 
         public IReadOnlyList<IDomainEvent> GetDomainEvents() {

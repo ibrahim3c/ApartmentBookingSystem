@@ -1,4 +1,6 @@
 
+using ApartmentBooking.Api.Extensions;
+using ApartmentBooking.Api.Middleware;
 using ApartmentBooking.Application;
 using ApartmentBooking.Infrastructure;
 
@@ -32,10 +34,12 @@ public class Program
         {
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.SeedData();
         }
 
         app.UseHttpsRedirection();
 
+        app.UseMiddleware<GlobalExceptionHandler>();
         app.MapControllers();
 
         app.Run();

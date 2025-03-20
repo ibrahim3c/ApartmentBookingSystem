@@ -20,6 +20,10 @@ namespace ApartmentBooking.Domain.Apartments
             Price = price;
             CleaningFee = cleaningFee;
         }
+        private Apartment()
+        {
+
+        }
 
         /*
          * why he make setter private? 
@@ -45,5 +49,6 @@ namespace ApartmentBooking.Domain.Apartments
 
         // represent the benefits this apartment offers
         public List<Amenty> Amenties { get; private set; } = new();
+
     }
 }
